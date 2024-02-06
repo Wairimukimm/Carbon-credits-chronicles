@@ -5,12 +5,12 @@ import plotly.express as px
 
 # Sidebar filters
 st.sidebar.title("Filters")
-selected_country = st.sidebar.selectbox("Select Country", merged_data["Entity"].unique())
+selected_country = st.sidebar.selectbox("Select Country", merged_df["Entity"].unique())
 start_year = st.sidebar.slider("Select Start Year", min_value=merged_df["Year"].min(), max_value=merged_df["Year"].max(), value=merged_df["Year"].min())
 end_year = st.sidebar.slider("Select End Year", min_value=merged_df["Year"].min(), max_value=merged_df["Year"].max(), value=merged_df["Year"].max())
 
 # Filter data based on selected country and years
-filtered_df = merged_data[(merged_data["Entity"] == selected_country) & (merged_data["Year"].between(start_year, end_year))]
+filtered_df = merged_df[(merged_df["Entity"] == selected_country) & (merged_df["Year"].between(start_year, end_year))]
 
 # Display emissions trend
 st.title("Carbon Credit Initiative Analysis")
