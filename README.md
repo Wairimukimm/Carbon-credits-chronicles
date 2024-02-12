@@ -1,4 +1,4 @@
-![image](https://github.com/randellmwania/Movie-Recommendation-System/assets/122815372/6d1dcbf3-10bd-4872-b782-2a99d6aeb1bd)
+
 
 
 ## CARBON CREDITS CHRONICLES 
