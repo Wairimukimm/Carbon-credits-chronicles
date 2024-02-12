@@ -49,8 +49,8 @@ To follow along:
 - Recommendations include implementing carbon pricing and promoting cleaner technologies.
 
 ## Authors
-Pricilla Wairimu
-Gloria Nyongesa
-Paul Mbugua
-William Omballa
-Erick Lintari
+ - Pricilla Wairimu
+ - Gloria Nyongesa
+ - Paul Mbugua
+ - William Omballa
+ - Erick Lintari
