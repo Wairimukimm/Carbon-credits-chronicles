@@ -95,34 +95,6 @@ st.markdown(
     """
 )
 
-import streamlit as st
-
-# Create two columns layout
-sidebar, content = st.columns([1, 4])
-
-# Define tabs in the sidebar
-tabs = sidebar.radio("Navigation", ["Dashboard", "Collaboration", "Tools"])
-
-# Define content for each tab
-if tabs == "Dashboard":
-    # Content for Dashboard tab
-    with content:
-        st.title("Dashboard")
-        st.write("This is the Dashboard tab content.")
-    
-elif tabs == "Collaboration":
-    # Content for Collaboration tab
-    with content:
-        st.title("Collaboration")
-        st.write("This is the Collaboration tab content.")
-    
-elif tabs == "Tools":
-    # Content for Tools tab
-    with content:
-        st.title("Tools")
-        st.write("This is the Tools tab content.")
-
-
 
 # Sidebar Filters with Styling
 st.sidebar.header('🔍 Filters')
