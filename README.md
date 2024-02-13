@@ -16,7 +16,7 @@ As the global business landscape shifts towards sustainability, there is a growi
 ## Components
 * The [Jupyter Notebook](https://github.com/Wairimukimm/Carbon-credits-chronicles/blob/main/Notebook.ipynb) is the main deliverable. It contains the details of the approach taken and the methodology. It contains data cleaning, exploratory data analysis, data preparation for modelling and building the recommendation system.
 
-* The [Presentation](https://github.com/randellmwania/Movie-Recommendation-System/blob/main/presentation.pdf) is the non technical Presentation of the project. It contains the objectives, problem statment, model evaluation, findings and recommendations.
+* The [Presentation](https://github.com/Wairimukimm/Carbon-credits-chronicles/blob/main/presentation.pdf) is the non technical Presentation of the project. It contains the objectives, problem statment, model evaluation, findings and recommendations.
 
 * The dataset used for this project can be found in [Kaggle](https://ourworldindata.org/co2-emissions) and [2](https://gspp.berkeley.edu/research-and-impact/centers/cepp/projects/berkeley-carbon-trading-project/offsets-database)
 
