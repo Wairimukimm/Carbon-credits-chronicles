@@ -1,8 +1,10 @@
+
+## CARBON CREDITS CHRONICLES 
+
 ![image](https://github.com/Wairimukimm/Carbon-credits-chronicles/assets/122815372/3052af54-8494-461f-b00a-96353357c0a2)
 
 
 
-## CARBON CREDITS CHRONICLES 
 ## Overview
 In the race against climate change, businesses are embracing carbon credit projects to mitigate their environmental footprint. This study delves into time series analysis, comparing pre and post-implementation periods of carbon credit projects, aiming to unveil the transformative impact on emission patterns over time.
 
