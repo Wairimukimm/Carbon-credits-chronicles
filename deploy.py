@@ -2,7 +2,7 @@ import pandas as pd
 import numpy
 import sys
 import random
-import openai
+
 
 import matplotlib.pyplot as plt
 import seaborn as sns
@@ -270,48 +270,48 @@ if st.sidebar.button("Calculate Future Credits"):
 
 
         
-# Custom Collaboration Feature (Chat Widget)
-st.markdown("## Custom Collaboration Feature: Chat")
+# # Custom Collaboration Feature (Chat Widget)
+# st.markdown("## Custom Collaboration Feature: Chat")
 
 
-# Set your OpenAI API key
-openai.api_key = "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"
+# # Set your OpenAI API key
+# openai.api_key = "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"
 
 
-def generate_openai_response(question):
-    try:
-        response = openai.Completion.create(
-            engine="davinci-002",  # You can experiment with different engines
-            prompt=question,
-            max_tokens=50  # Adjust max_tokens as needed
-        )
-        return response.choices[0].text.strip()
-    except Exception as e:
-        st.error(f"An error occurred: {e}")
-        return None
+# def generate_openai_response(question):
+#     try:
+#         response = openai.Completion.create(
+#             engine="davinci-002",  # You can experiment with different engines
+#             prompt=question,
+#             max_tokens=50  # Adjust max_tokens as needed
+#         )
+#         return response.choices[0].text.strip()
+#     except Exception as e:
+#         st.error(f"An error occurred: {e}")
+#         return None
 
 # # Input box for asking questions
-question = st.text_input("Ask a question about climate change or carbon credits:", "")
+# question = st.text_input("Ask a question about climate change or carbon credits:", "")
 
 
-if st.button("Ask"):
-    if question:
-        question = question.capitalize()  # Capitalize the first letter
-        # Generate response using OpenAI API
-        response = generate_openai_response(question)
-        if response:
-            st.write("Bot:", response)
-    else:
-        st.warning("Please ask a question")
+# if st.button("Ask"):
+#     if question:
+#         question = question.capitalize()  # Capitalize the first letter
+#         # Generate response using OpenAI API
+#         response = generate_openai_response(question)
+#         if response:
+#             st.write("Bot:", response)
+#     else:
+#         st.warning("Please ask a question")
 
-# Function to generate response using OpenAI API
-def generate_openai_response(question):
-    response = openai.Completion.create(
-        engine="davinci-002",  # You can experiment with different engines
-        prompt=question,
-        max_tokens=50  # Adjust max_tokens as needed
-    )
-    return response.choices[0].text.strip()
+# # Function to generate response using OpenAI API
+# def generate_openai_response(question):
+#     response = openai.Completion.create(
+#         engine="davinci-002",  # You can experiment with different engines
+#         prompt=question,
+#         max_tokens=50  # Adjust max_tokens as needed
+#     )
+#     return response.choices[0].text.strip()
 
 # # Input box for asking questions
 # question = st.text_input("Ask a question about climate change or carbon credits:", "")
