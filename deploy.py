@@ -2,7 +2,6 @@ import pandas as pd
 import numpy
 import sys
 import random
-import openai
 
 import geopandas as gpd
 import matplotlib.pyplot as plt
@@ -49,12 +48,21 @@ df1_projects = pd.read_csv('./data/credits/ACR/ACR Projects.csv')
 df2_projects = pd.read_csv('./data/credits/CAR/CAR Projects.csv')
 df3_projects = pd.read_csv('./data/credits/Gold/Gold Projects.csv')
 
-#Rename the GS_ID to Project ID for merging.
-df3_projects.rename(columns={'GS_ID': 'Project ID'}, inplace=True)
 
-df1.rename(columns={'Issuance \r\nYear': 'Issuance Year', 'Total Credits Issued': 'Total Offset Credits Issued'}, inplace=True)
-df2.rename(columns={'Issuance \r\nYear': 'Issuance Year'}, inplace=True)
-df3.rename(columns={'Issuance \r\nYear': 'Issuance Year', 'Country':'Project Site Country', 'Quantity':'Total Offset Credits Issued'}, inplace=True)
+def clean_columns(df):
+    df.columns = df.columns.str.strip().str.replace('\r', '', regex=True).str.replace('\n', '', regex=True)
+    return df
+
+df1 = clean_columns(df1)
+df2 = clean_columns(df2)
+df3 = clean_columns(df3)
+df1_projects = clean_columns(df1_projects)
+df2_projects = clean_columns(df2_projects)
+df3_projects = clean_columns(df3_projects)
+df3_projects.rename(columns={'GS_ID': 'Project ID'}, inplace=True)
+df1.rename(columns={'Issuance Year': 'Issuance Year', 'Total Credits Issued': 'Total Offset Credits Issued'}, inplace=True)
+df2.rename(columns={'Issuance Year': 'Issuance Year'}, inplace=True)
+df3.rename(columns={'Issuance Year': 'Issuance Year', 'Country':'Project Site Country', 'Quantity':'Total Offset Credits Issued'}, inplace=True)
 
 def createNewDf(df, projects_df):
     columns = ["Project ID", "Total Offset Credits Issued", "Project Site Country", "Issuance Year", "Organization"]
@@ -263,38 +271,38 @@ if st.sidebar.button("Calculate Future Credits"):
 
         
 # Custom Collaboration Feature (Chat Widget)
-st.markdown("## Custom Collaboration Feature: Chat")
+# st.markdown("## Custom Collaboration Feature: Chat")
 
 
 # Set your OpenAI API key
-openai.api_key = "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"
+# openai.api_key = "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"
 
 
-def generate_openai_response(question):
-    try:
-        response = openai.Completion.create(
-            engine="davinci-002",  # You can experiment with different engines
-            prompt=question,
-            max_tokens=50  # Adjust max_tokens as needed
-        )
-        return response.choices[0].text.strip()
-    except Exception as e:
-        st.error(f"An error occurred: {e}")
-        return None
+# def generate_openai_response(question):
+#     try:
+#         response = openai.Completion.create(
+#             engine="davinci-002",  # You can experiment with different engines
+#             prompt=question,
+#             max_tokens=50  # Adjust max_tokens as needed
+#         )
+#         return response.choices[0].text.strip()
+#     except Exception as e:
+#         st.error(f"An error occurred: {e}")
+#         return None
 
-# Input box for asking questions
-question = st.text_input("Ask a question about climate change or carbon credits:", "")
+# # Input box for asking questions
+# question = st.text_input("Ask a question about climate change or carbon credits:", "")
 
 
-if st.button("Ask"):
-    if question:
-        question = question.capitalize()  # Capitalize the first letter
-        # Generate response using OpenAI API
-        response = generate_openai_response(question)
-        if response:
-            st.write("Bot:", response)
-    else:
-        st.warning("Please ask a question")
+# if st.button("Ask"):
+#     if question:
+#         question = question.capitalize()  # Capitalize the first letter
+#         # Generate response using OpenAI API
+#         response = generate_openai_response(question)
+#         if response:
+#             st.write("Bot:", response)
+#     else:
+#         st.warning("Please ask a question")
 
 # # Function to generate response using OpenAI API
 # def generate_openai_response(question):
