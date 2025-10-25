@@ -3,7 +3,7 @@ import numpy
 import sys
 import random
 
-import geopandas as gpd
+
 import matplotlib.pyplot as plt
 import seaborn as sns
 import streamlit as st
